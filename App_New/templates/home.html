@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body style="font-family: Arial; margin: 0; background-image: url('/static/bg.jpg'); background-size: cover; background-position: center; text-align: center; height: 100vh;">
+
+    <div style="display: flex; justify-content: space-between; padding: 20px 40px; background: rgba(255, 255, 255, 0.95); color: darkred; border-bottom: 5px solid red;">
+        <div style="text-align: left;">
+            <h3 style="margin: 0; font-size: 18px;">Email us</h3>
+            <p style="margin: 0; font-weight: bold; color: red;">info@bloodtoday.com</p>
+        </div>
+        <div style="text-align: right;">
+            <h1 style="margin: 0; font-size: 32px; font-weight: 900;">BloodToday</h1>
+            <p style="margin: 0; font-style: italic; color: #555;">Safe blood for all</p>
+        </div>
+    </div>
+
+    {% if message %}
+        <h2 style="color: white; background: green; padding: 15px 30px; display: inline-block; border-radius: 8px; margin-top: 30px; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">{{ message }}</h2>
+    {% endif %}
+
+    <div style="margin-top: 120px; display: flex; justify-content: center; gap: 50px;">
+        
+        <a href="/register" style="background: white; color: darkred; padding: 30px 50px; text-decoration: none; border-radius: 15px; display: flex; flex-direction: column; align-items: center; font-weight: bold; font-size: 22px; box-shadow: 0px 6px 15px rgba(0,0,0,0.3); border: 2px solid darkred; width: 200px;">
+            <i class="fa-solid fa-user-plus" style="font-size: 50px; margin-bottom: 15px; color: red;"></i>
+            Register Donor
+        </a>
+
+        <a href="/search" style="background: darkred; color: white; padding: 30px 50px; text-decoration: none; border-radius: 15px; display: flex; flex-direction: column; align-items: center; font-weight: bold; font-size: 22px; box-shadow: 0px 6px 15px rgba(0,0,0,0.3); border: 2px solid white; width: 200px;">
+            <i class="fa-solid fa-magnifying-glass" style="font-size: 50px; margin-bottom: 15px;"></i>
+            Search Donor
+        </a>
+
+    </div>
+
+</body>
+</html>

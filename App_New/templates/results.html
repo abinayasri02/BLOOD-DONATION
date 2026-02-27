@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body style="font-family: Arial; text-align: center; background-image: url('/static/bg.jpg'); background-size: cover; background-position: center; color: #333; margin: 0; padding: 20px;">
+    
+    <h1 style="color: darkred; background-color: rgba(255, 255, 255, 0.9); display: inline-block; padding: 10px 20px; border-radius: 10px;">🩸 Matching Donors</h1>
+    
+    {% if alerted %}
+        <br>
+        <h3 style="color: white; background-color: red; display: inline-block; padding: 10px 20px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0,0,0,0.3);">🚨 SMS Alerts have been triggered for matching donors!</h3>
+    {% endif %}
+    
+    <div style="background: rgba(255, 255, 255, 0.95); padding: 20px; width: 70%; margin: 20px auto; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0,0,0,0.2);">
+        <table border="1" style="margin: auto; width: 100%; border-collapse: collapse; text-align: left;">
+            <tr style="background-color: darkred; color: white;">
+                <th style="padding: 10px;">Name</th>
+                <th style="padding: 10px;">Blood Group</th>
+                <th style="padding: 10px;">Phone</th>
+                <th style="padding: 10px;">City</th>
+                <th style="padding: 10px;">Locality</th>
+            </tr>
+            {% for donor in donors %}
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ccc;">{{ donor['name'] }}</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">{{ donor['blood_group'] }}</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">{{ donor['phone'] }}</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">{{ donor['city'] }}</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">{{ donor['locality'] }}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="5" style="padding: 10px; text-align: center; border: 1px solid #ccc;">No donors found in this exact area.</td></tr>
+            {% endfor %}
+        </table>
+        
+        <br>
+        <a href="/" style="display: inline-block; background: #333; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px;">Go Back to Home</a>
+    </div>
+
+</body>
+</html>
