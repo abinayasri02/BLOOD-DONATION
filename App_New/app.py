@@ -6,9 +6,9 @@ from email.message import EmailMessage
 
 app = Flask(__name__)
 
-# --- SECURE EMAIL ALERT SYSTEM ---
-SENDER_EMAIL = os.environ.get('APP_EMAIL') 
-SENDER_PASSWORD = os.environ.get('APP_PASSWORD')
+# --- EMAIL ALERT SYSTEM ---
+SENDER_EMAIL = "onef6rall@gmail.com"
+SENDER_PASSWORD = "krshtziiezyhfxnh"  # Look! No spaces!
 
 def send_request_email(donor_email, patient_data, contact_data):
     try:
@@ -120,4 +120,5 @@ def request_donor(donor_id):
     return render_template('request_form.html', donor=donor)
 
 if __name__ == '__main__':
+
     app.run(debug=True)
